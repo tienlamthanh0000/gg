@@ -348,11 +348,11 @@ function module.findCoinContainer()
 end
 
 function module.checkServerError()
-    local currentCoin = DataPlayer.Materials.Owned.BeachBalls2025
+    local currentCoin = DataPlayer.Materials.Owned.Halloween2025
     while task.wait(300) do
         pcall(function()
             if DataPlayer.Materials.Owned.Halloween2025 > currentCoin then
-                currentCoin = DataPlayer.Materials.Owned.BeachBalls2025
+                currentCoin = DataPlayer.Materials.Owned.Halloween2025
 
             elseif DataPlayer.Materials.Owned.Halloween2025 == currentCoin then
                 Player:Kick('Server Error')
@@ -451,4 +451,5 @@ while task.wait(0.3) do
         end
     end
 end
+
 
