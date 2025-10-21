@@ -24,7 +24,7 @@ local player = Players.LocalPlayer
 
 local sourceLabel = player:WaitForChild("PlayerGui")
     :WaitForChild("CrossPlatform")
-    :WaitForChild("Halloween2025")
+    :WaitForChild("Summer2025")
     :WaitForChild("Container")
     :WaitForChild("EventFrames")
     :WaitForChild("BattlePass")
@@ -51,7 +51,7 @@ local player = Players.LocalPlayer
 
 local sourceLabel = player:WaitForChild("PlayerGui")
     :WaitForChild("CrossPlatform")
-    :WaitForChild("Halloween2025")
+    :WaitForChild("Summer2025")
     :WaitForChild("Container")
     :WaitForChild("EventFrames")
     :WaitForChild("BattlePass")
@@ -119,7 +119,7 @@ local Config = getgenv().Config
 local module = {}
 local AutofarmIN = false
 local FullEggBag = false
-local CurrentCoinType = "Candy"
+local CurrentCoinType = "BeachBall"
 
 
 function module.setCollide(instance)
@@ -309,7 +309,7 @@ function module.createScreen()
             bigTextLabel.Font = Enum.Font.SourceSansBold
             bigTextLabel.TextSize = 50
             bigTextLabel.TextWrapped = true
-            bigTextLabel.Text = DataPlayer.Materials.Owned.Candies2025 or 'Error'
+            bigTextLabel.Text = DataPlayer.Materials.Owned.BeachBalls2025 or 'Error'
             bigTextLabel.Parent = blackFrame
         end)
     end
@@ -348,13 +348,13 @@ function module.findCoinContainer()
 end
 
 function module.checkServerError()
-    local currentCoin = DataPlayer.Materials.Owned.Candies2025
+    local currentCoin = DataPlayer.Materials.Owned.BeachBalls2025
     while task.wait(300) do
         pcall(function()
-            if DataPlayer.Materials.Owned.Candies2025 > currentCoin then
-                currentCoin = DataPlayer.Materials.Owned.Candies2025
+            if DataPlayer.Materials.Owned.BeachBalls2025 > currentCoin then
+                currentCoin = DataPlayer.Materials.Owned.BeachBalls2025
 
-            elseif DataPlayer.Materials.Owned.Candies2025 == currentCoin then
+            elseif DataPlayer.Materials.Owned.BeachBalls2025 == currentCoin then
                 Player:Kick('Server Error')
                 Services.TeleportService:Teleport(game.PlaceId, Player)
             end
@@ -393,7 +393,7 @@ task.defer(module.checkServerError)
 task.spawn(function()
     Services.Workspace.FallenPartsDestroyHeight = (0 / 0)
     while task.wait(1) do
-        if Player.PlayerGui.MainGUI.Game.CoinBags.Container.Candy.Visible then
+        if Player.PlayerGui.MainGUI.Game.CoinBags.Container.BeachBall.Visible then
             AutofarmIN = true
         else
             AutofarmIN = false
